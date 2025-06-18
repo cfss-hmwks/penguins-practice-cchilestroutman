@@ -26,11 +26,11 @@ library(palmerpenguins)
 
 data("penguins")
 
-penguins_sex <- group_by(.data = penguins, sex)
-penguins_sex_adelie <- filter(.data = penguins_sex, species == "Adelie")
+penguins_island <- group_by(.data = penguins, island)
+penguins_island_species <- filter(.data = penguins_island, species == "Gentoo")
 
 summarize(
-  .data = penguins_sex_adelie,
+  .data = penguins_island_gentoo,
   avg_bill = mean(bill_length_mm, na.rm = TRUE), avg_mass = mean(body_mass_g, na.rm = TRUE))
 ```
 
